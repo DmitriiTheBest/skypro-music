@@ -8,7 +8,13 @@ export default function Home() {
         <main className="main">
           <nav className="main__nav nav">
             <div className="nav__logo logo">
-              <img className="logo__image" src="img/logo.png" />
+              <Image
+                alt="логотип Skypro Music"
+                className="logo__image"
+                width={113}
+                height={17}
+                src="/img/logo.png"
+              />
             </div>
             <div className="nav__burger burger">
               <span className="burger__line" />
@@ -648,6 +654,8 @@ export default function Home() {
                       className="sidebar__img"
                       src="img/playlist01.png"
                       alt="day's playlist"
+                      width={250}
+                      height={150}
                     />
                   </a>
                 </div>
@@ -657,6 +665,8 @@ export default function Home() {
                       className="sidebar__img"
                       src="img/playlist02.png"
                       alt="day's playlist"
+                      width={250}
+                      height={150}
                     />
                   </a>
                 </div>
@@ -666,6 +676,8 @@ export default function Home() {
                       className="sidebar__img"
                       src="img/playlist03.png"
                       alt="day's playlist"
+                      width={250}
+                      height={150}
                     />
                   </a>
                 </div>

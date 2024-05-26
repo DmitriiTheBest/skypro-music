@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function SigninPage() {
   return (
     <div className="wrapper">
@@ -6,7 +8,7 @@ export default function SigninPage() {
           <form className="modal__form-login" action="#">
             <a href="../">
               <div className="modal__logo">
-                <img src="../img/logo_modal.png" alt="logo" />
+                <Image src="/img/logo_modal.png" alt="логотип модальное окно" width={140} height={21} />
               </div>
             </a>
             <input
