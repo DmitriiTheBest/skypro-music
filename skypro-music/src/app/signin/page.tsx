@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function SigninPage() {
   return (
@@ -24,10 +25,10 @@ export default function SigninPage() {
               placeholder="Пароль"
             />
             <button className="modal__btn-enter">
-              <a href="../index.html">Войти</a>
+              <Link href="/">Войти</Link>
             </button>
             <button className="modal__btn-signup">
-              <a href="signup.html">Зарегистрироваться</a>
+              <Link href="/signup">Зарегистрироваться</Link>
             </button>
           </form>
         </div>
