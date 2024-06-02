@@ -50,8 +50,6 @@ body {
   background-color: #181818;
 }
 
-
-
 .main {
   -webkit-box-flex: 1;
   -ms-flex: 1 1 auto;
@@ -334,7 +332,7 @@ body {
   text-align: end;
 }
 
-.sidebar__personal {
+/* .sidebar__personal {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -413,5 +411,5 @@ body {
 .sidebar__img {
   width: 100%;
   height: auto;
-}
+} */
 
