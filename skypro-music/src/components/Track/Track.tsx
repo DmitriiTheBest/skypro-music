@@ -1,5 +1,4 @@
 import styles from "./Track.module.css";
-// import classNames from 'classnames';
 
 // декомпозиция стилей для компонента Track 
 export default function Track() {
