@@ -6,7 +6,15 @@ import { getTracks } from "@/api/tracks";
 import { trackType } from "@/types";
 
 export default async function Centerblock() {
-  const tracksData:trackType[] = await getTracks();
+  // const tracksData:trackType[] = await getTracks();
+
+  let tracksData: trackType[];
+  try {
+    tracksData = await getTracks();
+  } catch (error: any) {
+    throw new Error(error.message);
+  }
+
   return (
     <div className={styles.mainCenterblock}>
       <div className={styles.centerblockSearch}>
