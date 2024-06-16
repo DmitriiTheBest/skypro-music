@@ -15,9 +15,9 @@ export default function FilterItem({ handleFilterClick, title, list, isOpened}: 
         {title}
       </div>
 
-      {isOpened && (<ul>
+      {isOpened && (<ul className={styles.filterList}>
         {list.map((item) => (
-          <li key={item}>{item}</li>
+          <li className={styles.filterItem} key={item}>{item}</li>
         ))}
       </ul>)}
     </>
