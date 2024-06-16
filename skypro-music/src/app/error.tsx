@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect } from "react";
+import styles from "./error.module.css";
+import Image from "next/image";
 
 export default function Error({ error, reset }: any) {
   useEffect(() => {
@@ -9,9 +11,16 @@ export default function Error({ error, reset }: any) {
   }, [error]);
 
   return (
-    <div>
-      <h2>Что-то пошло не так!</h2>
-      <button onClick={reset}>Попробовать снова</button>
+    <div className={styles.block}>
+       <Image
+       className={styles.logo}
+          src="/img/reactor.png"
+          alt="logo"
+          width={120}
+          height={120}
+        />
+      <h2 className={styles.blink}>Что-то пошло не так!</h2>
+      <button className={styles.button} onClick={reset}>Попробовать снова</button>
     </div>
   );
 }
