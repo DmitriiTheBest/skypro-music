@@ -1,26 +1,28 @@
-import FilterItem from "./FilterItem/Filteritem";
-import styles from "./Filters.module.css";
-import classNames from "classnames";
+"use client";
 
-// import Track from "../Track/Track";
-// import Track from "@components/Track/Track";
+import { useState } from "react";
+import FilterItem from "./FilterItem/FilterItem";
+import styles from "./Filters.module.css";
+import { filters } from "./data";
 
 export default function Filters() {
+  const [activeFilter, setActiveFilter] = useState<string | null>(null);
+  function handleFilterClick(newFilter: string) {
+    setActiveFilter((prev) => (prev === newFilter ? null : newFilter));
+  }
+
   return (
     <div className={styles.centerblockFilter}>
       <div className={styles.filterTitle}>Искать по:</div>
-      <FilterItem
-        title={"Исполнитель"}
-        list={["Dmitrii", "Nasty", "Pollie", "Ksena"]}
-      />
-      <FilterItem
-        title={"Году выпуска"}
-        list={["2020", "2021", "2022", "2023"]}
-      />
-      <FilterItem
-        title={"Жанру"}
-        list={["Rock", "Pop", "Rap", "Jazz"]}
-      />
+      {filters.map((filter) => (
+        <FilterItem
+          key={filter.title}
+          isOpened={activeFilter === filter.title}
+          handleFilterClick={handleFilterClick}
+          title={filter.title}
+          list={filter.list}
+        />
+      ))}
     </div>
   );
 }
