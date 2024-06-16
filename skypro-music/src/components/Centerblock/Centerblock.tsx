@@ -1,10 +1,12 @@
 import classNames from "classnames";
-// import Track from "../Track/Track";
 import Track from "@components/Track/Track";
 import styles from "./Centerblock.module.css";
 import Filters from "../Filters/Filters";
+import { getTracks } from "@/api/tracks";
+import { trackType } from "@/types";
 
-export default function Centerblock() {
+export default async function Centerblock() {
+  const tracksData:trackType[] = await getTracks();
   return (
     <div className={styles.mainCenterblock}>
       <div className={styles.centerblockSearch}>
@@ -38,9 +40,23 @@ export default function Centerblock() {
           </div>
         </div>
         <div className={styles.contentPlaylist}>
-          <Track />
+          {tracksData.map((trackData) => (
+            <Track
+              key={trackData.id}
+              name={trackData.name}
+              author={trackData.author}
+              album={trackData.album}
+            />
+          ))}
         </div>
       </div>
     </div>
   );
 }
+
+// // Обратите внимание, что функция компонента также является асинхронной
+// export default async function HomePage() {
+//   const data = await getData();
+
+//   return <main>/* Некий контент */</main>;
+// }

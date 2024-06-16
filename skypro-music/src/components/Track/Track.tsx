@@ -1,11 +1,17 @@
 import styles from "./Track.module.css";
 
-// декомпозиция стилей для компонента Track 
-export default function Track() {
+type TrackType = {
+  name: string;
+  author: string;
+  album: string;
+};
+
+// декомпозиция стилей для компонента Track
+export default function Track({ name, author, album }: TrackType) {
   return (
     <div className={styles.playlistItem}>
       <div className={styles.playlistTrack}>
-        <div className={styles.trackTitle}> 
+        <div className={styles.trackTitle}>
           <div className={styles.trackTitleImage}>
             <svg className={styles.trackTitleSvg}>
               <use xlinkHref="img/icon/sprite.svg#icon-note" />
@@ -13,18 +19,18 @@ export default function Track() {
           </div>
           <div className="track__title-text">
             <a className={styles.trackTitleLink} href="http://">
-              Guilt <span className={styles.trackTitleSpan} />
+              {name} <span className={styles.trackTitleSpan} />
             </a>
           </div>
         </div>
         <div className={styles.trackAuthor}>
           <a className={styles.trackAuthorLink} href="http://">
-            Nero
+            {author}
           </a>
         </div>
         <div className={styles.trackAlbum}>
           <a className={styles.trackAlbumLink} href="http://">
-            Welcome Reality
+            {album}
           </a>
         </div>
         <div className="track__time">
@@ -38,4 +44,4 @@ export default function Track() {
   );
 }
 
-// done 
+// done
