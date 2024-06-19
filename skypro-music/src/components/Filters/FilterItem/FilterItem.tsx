@@ -18,9 +18,14 @@ export default function FilterItem({
     <div className={styles.wrapper}>
       <div
         onClick={() => handleFilterClick(title)}
-        className={classNames(styles.filterButton, styles.BtnText, {
-          [styles.filterItemActive]: isOpened,
-        })}
+        className={classNames(
+          styles.filterButton,
+          { [styles.filterButtonActive]: isOpened },
+          styles.BtnText,
+          {
+            [styles.filterItemActive]: isOpened,
+          }
+        )}
       >
         {title}
       </div>
