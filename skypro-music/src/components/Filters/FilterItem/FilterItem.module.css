@@ -11,11 +11,13 @@
     border: 1px solid #ffffff;
     border-radius: 60px;
     padding: 6px 20px;
-}
-
-.filterButton:not(:last-child) {
     margin-right: 10px;
 }
+
+
+
+/* .filterButton:not(:last-child) {
+} */
 
 .BtnText:hover {
     border-color: #ad61ff;
@@ -23,7 +25,7 @@
     cursor: pointer;
 }
 
-.BtnText:active {
+.BtnTextActive {
     border-color: #ad61ff;
     color: #ad61ff;
     cursor: pointer;
@@ -59,4 +61,10 @@
     color: #B672FF;
     cursor: pointer;
     text-decoration: underline;
+}
+
+.filterItemActive {
+    color: #B672FF;
+    cursor: pointer;
+    /* text-decoration: underline; */
 }
